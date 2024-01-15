@@ -6,7 +6,7 @@ import Island from '../models/Island';
 import Plane from '../models/Plane';
 import Sky from '../models/Sky';
 import HomeInfo from "../components/HomeInfo";
-import Welcome from "../components/Welcome";  
+import Welcome from "../components/Welcome";
 import * as THREE from 'three';
 
 import { OrbitControls } from "@react-three/drei";
@@ -40,24 +40,24 @@ const Home = () => {
     setShowGuide(false);
   };
 
-   useEffect(() => {
-  if (isPlayingMusic) {
-    audioRef.current.play();
-  }
+  useEffect(() => {
+    if (isPlayingMusic) {
+      audioRef.current.play();
+    }
 
-  return () => {
-    audioRef.current.pause();
-  };
-}, [isPlayingMusic]);;
+    return () => {
+      audioRef.current.pause();
+    };
+  }, [isPlayingMusic]);;
 
 
-useEffect(() => {
-  const delayTimer = setTimeout(() => {
-    setLoading(false);
-  }, 500);
+  useEffect(() => {
+    const delayTimer = setTimeout(() => {
+      setLoading(false);
+    }, 500);
 
-  return () => clearTimeout(delayTimer);
-}, []);
+    return () => clearTimeout(delayTimer);
+  }, []);
 
   const adjustBiplaneForScreenSize = () => {
     let screenScale, screenPosition;
@@ -95,14 +95,9 @@ useEffect(() => {
 
   return (
     <section className='w-full h-screen relative'>
-       {/* {loading ? (
-        <div className='wow-loader-container'>
-        <ScaleLoader size={60} color='#0072ff' />
-      </div>
-      ) : ( */}
-        <>
+
       <div className='absolute top-20 left-0 right-0 z-10 flex items-center justify-center'>
-      {currentStage && <HomeInfo currentStage={currentStage} showGuide={showGuide} />}
+        {currentStage && <HomeInfo currentStage={currentStage} showGuide={showGuide} />}
       </div>
 
       <Welcome
@@ -115,13 +110,12 @@ useEffect(() => {
         guideStep={guideStep}
       />
 
-      
+
       <Canvas
-  className={`w-full h-screen bg-transparent ${
-    (isRotating && !showGuide) ? "cursor-grabbing" : "cursor-grab"
-  }`}
-  camera={{ near: 0.1, far: 1000 }}
->
+        className={`w-full h-screen bg-transparent ${(isRotating && !showGuide) ? "cursor-grabbing" : "cursor-grab"
+          }`}
+        camera={{ near: 0.1, far: 1000 }}
+      >
         <Suspense fallback={<Loader />}>
           <directionalLight position={[1, 1, 1]} intensity={2} />
           <ambientLight intensity={0.5} />
@@ -137,7 +131,7 @@ useEffect(() => {
             groundColor='#000000'
             intensity={1}
           />
-           <OrbitControls
+          <OrbitControls
             enableZoom={true}
             maxPolarAngle={Math.PI / 2}
             minPolarAngle={Math.PI / 2}
@@ -162,15 +156,13 @@ useEffect(() => {
         </Suspense>
       </Canvas>
       <div className="absolute sm:bottom-8 bottom-24 left-8">
-            <img
-              src={isPlayingMusic ? soundon : soundoff}
-              alt="sound"
-              className="lg:w-9 w-12 lg:h-9 h-12 cursor-pointer object-contain"
-              onClick={() => setIsPlayingMusic(!isPlayingMusic)}
-            />
-          </div>
-      </>
-      {/* )} */}
+        <img
+          src={isPlayingMusic ? soundon : soundoff}
+          alt="sound"
+          className="lg:w-9 w-12 lg:h-9 h-12 cursor-pointer object-contain"
+          onClick={() => setIsPlayingMusic(!isPlayingMusic)}
+        />
+      </div>
     </section>
   );
 };
