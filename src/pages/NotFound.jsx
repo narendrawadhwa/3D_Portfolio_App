@@ -6,26 +6,26 @@ import Loading from '../components/Loading';
 
 
 const NotFound = () => {
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
     const [imageLoaded, setImageLoaded] = useState(false);
 
     const handleImageLoad = () => {
         setImageLoaded(true);
     };
-    useEffect(() => {
-        const delayTimer = setTimeout(() => {
-            setLoading(false);
-        }, 300);
+    // useEffect(() => {
+    //     const delayTimer = setTimeout(() => {
+    //         setLoading(false);
+    //     }, 300);
 
-        return () => clearTimeout(delayTimer);
-    }, []);
+    //     return () => clearTimeout(delayTimer);
+    // }, []);
 
 
     return (
         <section className='max-container flex lg:flex-row flex-col items-center justify-center '>
-            {loading ? (
+            {/* {loading ? (
                 <Loading />
-            ) : (
+            ) : ( */}
                 <>
                     <div className='lg:w-[45%]'>
                         <h1 className='lg:text-2xl text-[24px] font-bold mb-4 text-[#00a6e0]'>
@@ -62,7 +62,7 @@ const NotFound = () => {
                             <Link to="/">Explore My World</Link>
                         </span>
                     </div>
-                </>)}
+                </>
         </section>
     );
 };

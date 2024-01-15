@@ -6,16 +6,16 @@ import { useState, useEffect } from 'react';
 import Loading from '../components/Loading'
 
 const BTS = () => {
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
 
-  useEffect(() => {
-    const delayTimer = setTimeout(() => {
-      setLoading(false);
-    }, 500);
+  // useEffect(() => {
+  //   const delayTimer = setTimeout(() => {
+  //     setLoading(false);
+  //   }, 500);
 
-    return () => clearTimeout(delayTimer);
-  }, []);
+  //   return () => clearTimeout(delayTimer);
+  // }, []);
 
 
   
@@ -23,8 +23,8 @@ const BTS = () => {
 
   return (
     <section className='max-container'>
-      {loading ? (<Loading />
-      ) : (
+      {/* {loading ? (<Loading />
+      ) : ( */}
 <motion.div
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
@@ -73,8 +73,8 @@ const BTS = () => {
             <p  className='sm:text-[19px] text-[16px]'>
             Dive into my digital universe and uncover the story of my journey into the tech realm. Navigate through
             <Link to='/about' className="text-blue-500"> my skills, educational milestones, professional experience</Link>, and a portfolio adorned with 
-            <Link to='/projects' className="text-blue-500">diverse projects.</Link> Connect with me through the 
-            <Link to='/contact' className="text-blue-500">contact form,</Link> and let's shape the future together.
+            <Link to='/projects' className="text-blue-500"> diverse projects.</Link> Connect with me through the 
+            <Link to='/contact' className="text-blue-500"> contact form,</Link> and let's shape the future together.
 </p>
           </div>
 
@@ -83,8 +83,8 @@ const BTS = () => {
           <CTA />
         </motion.div>
         
-      )}
-                 
+      {/* )}
+                  */}
     </section>
   )
 }

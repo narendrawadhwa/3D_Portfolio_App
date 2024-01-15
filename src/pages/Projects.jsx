@@ -7,22 +7,22 @@ import Loading from '../components/Loading'
 import { motion } from "framer-motion";
 
 const Projects = () => {
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const delayTimer = setTimeout(() => {
-      setLoading(false);
-    }, 500);
+  // useEffect(() => {
+  //   const delayTimer = setTimeout(() => {
+  //     setLoading(false);
+  //   }, 500);
 
-    return () => clearTimeout(delayTimer);
-  }, []);
+  //   return () => clearTimeout(delayTimer);
+  // }, []);
 
 
   return (
     <section className='max-container'>
 
-      {loading ? (<Loading />
-      ) : (
+      {/* {loading ? (<Loading />
+      ) : ( */}
         <motion.div
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
@@ -89,7 +89,7 @@ const Projects = () => {
           <hr className="border-slate-200" />
           <CTA />
         </motion.div>
-      )}
+      {/* )} */}
     </section>
   )
 }

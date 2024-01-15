@@ -23,7 +23,7 @@ const Home = () => {
   const [currentStage, setCurrentStage] = useState(1);
   const [isRotating, setIsRotating] = useState(false);
   const [showGuide, setShowGuide] = useState(true);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const [guideStep, setGuideStep] = useState(1);
   const [isPlayingMusic, setIsPlayingMusic] = useState(false);
 
@@ -95,11 +95,11 @@ useEffect(() => {
 
   return (
     <section className='w-full h-screen relative'>
-       {loading ? (
+       {/* {loading ? (
         <div className='wow-loader-container'>
         <ScaleLoader size={60} color='#0072ff' />
       </div>
-      ) : (
+      ) : ( */}
         <>
       <div className='absolute top-20 left-0 right-0 z-10 flex items-center justify-center'>
       {currentStage && <HomeInfo currentStage={currentStage} showGuide={showGuide} />}
@@ -170,7 +170,7 @@ useEffect(() => {
             />
           </div>
       </>
-      )}
+      {/* )} */}
     </section>
   );
 };
